@@ -22,3 +22,12 @@ jobs:
         echo ${{ 1 }}
         echo ${{ 'Strign expression' }}
         echo ${{ 2 > 3  }}
+    
+    - name: Print github action context object
+      run: |
+        echo '${{ toJson(github) }}'
+        echo '${{ toJson(job) }}'
+        echo '${{ toJson(secrets) }}'
+        echo '${{ toJson(steps) }}'
+        echo '${{ toJson(runner) }}'
+  
