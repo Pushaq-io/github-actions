@@ -1,9 +1,16 @@
 name: Test Action
-on: [push]
+on:
+  push:
+    branches:
+      - main
+      - feature/*
+
 jobs:
   say_hello:
     runs-on: ubuntu-latest
     steps:
+    - name: Gretings
+      run: echo 'This is my first github action workflow'
     - name: Gretings
       run: echo 'This is my first github action workflow'
     
