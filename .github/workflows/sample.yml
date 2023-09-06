@@ -17,3 +17,8 @@ jobs:
     - name: Execute bash file
       run: sh say_hello.sh
     
+    - name: Expressions
+      run: |
+        echo ${{ 1 }}
+        echo ${{ 'Strign expression' }}
+        echo ${{ 2 > 3  }}
