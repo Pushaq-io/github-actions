@@ -9,8 +9,11 @@ jobs:
   say_hello:
     runs-on: ubuntu-latest
     steps:
-    - name: Gretings
-      run: echo 'This is my first github action workflow'
-    - name: Gretings
-      run: echo 'This is my first github action workflow'
+    - uses: actions/checkout@v3
+    
+    - name: Print current working directory
+      run: pwd
+
+    - name: Execute bash file
+      run: sh say_hello.sh
     
