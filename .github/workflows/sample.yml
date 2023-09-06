@@ -1,0 +1,9 @@
+name: Test Action
+on: [push]
+jobs:
+  say_hello:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Gretings
+      run: echo 'This is my first github action workflow'
+    
