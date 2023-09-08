@@ -1,9 +1,8 @@
 name: Test Action
 run-name: "Pipeline Github Action"
-on:
-  workflow_dispatch:
-    inputs:
-      
+env:
+  ENV_WORKFLOW: "Environment"
+on:    
   push:
     branches:
       - main
@@ -34,7 +33,11 @@ jobs:
         echo '${{ toJson(secrets) }}'
         echo '${{ toJson(steps) }}'
         echo '${{ toJson(runner) }}'
-  
+
+    - name: Print Environment Variables
+      run: |
+        echo '$ENV_WORKFLOW'
+
   run_feature_branch :
     runs-on: ubuntu-latest
     if: startsWith(github.ref , 'refs/heads/feature/')
