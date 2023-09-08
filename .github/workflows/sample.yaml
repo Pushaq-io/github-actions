@@ -37,7 +37,7 @@ jobs:
     - name: Print Environment Variables
       run: |
         echo $ENV_WORKFLOW
-        echo ${{ env.ENV_MESSAGE }}
+        echo ${{ vars.ENV_MESSAGE }}
 
   run_feature_branch :
     runs-on: ubuntu-latest
