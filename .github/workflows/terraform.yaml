@@ -5,11 +5,10 @@ env:
 on:    
   push:
     branches:
-      - main
-      - feature/**
+    - main
   pull_request: 
     branches:
-      - main
+    - main
 jobs:
 
   provision_resources:
