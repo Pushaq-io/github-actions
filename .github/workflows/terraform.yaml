@@ -27,7 +27,6 @@ jobs:
       with:
         terraform_version: ${{ env.TF_VERSION }}
         cli_config_credentials_token: ${{ secrets.ARM_CLIENT_ID }}
-        cli_config_credentials_hostname: "app.terraform.io"
   
     - name: Terraform Init
       run: terraform init
