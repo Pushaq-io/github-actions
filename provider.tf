@@ -1,11 +1,5 @@
 terraform {
-  backend "remote" {
-    hostname = "app.terraform.io"
-    organization = "caltamirano"
-    workspaces {
-      name = "terraform-github-actions"
-    }
-  }
+
   required_providers {
     azurerm = {
       source = "hashicorp/azurerm"
