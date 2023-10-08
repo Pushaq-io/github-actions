@@ -51,21 +51,21 @@ func TestMandatoryTags(t *testing.T) {
 	cred, err := azidentity.NewDefaultAzureCredential(nil)
 	logger.Log(t, "Testing Terratest Logger")
 	if err != nil {
-		logger.Log(t, "There was an error authenticating azure")
+		assert.Fail(t, "There was an error authenticating azure", err)
 		return
 	}
 
 	rgClient, err := armresources.NewResourceGroupsClient("72a70c6f-90c3-4aca-a78d-6e538352c901", cred, nil)
 
 	if err != nil {
-		logger.Log(t, "There was an error retrieving RG client.")
+		assert.Fail(t, "There was an error retrieving RG client.", err)
 		return
 	}
 
 	rg, err := rgClient.Get(context.Background(), rgName, nil)
 
 	if err != nil {
-		logger.Log(t, "There was an error obtaining RG", err)
+		assert.Fail(t, "There was an error obtaining RG", err)
 		return
 	}
 
