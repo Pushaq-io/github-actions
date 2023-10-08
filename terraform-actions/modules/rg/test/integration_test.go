@@ -61,7 +61,13 @@ func TestMandatoryTags(t *testing.T) {
 		logger.Log(t, "There was an error retrieving RG client.")
 		return
 	}
+
 	rg, err := rgClient.Get(context.Background(), rgName, nil)
+
+	if err != nil {
+		logger.Log(t, "There was an error obtaining RG", err)
+		return
+	}
 
 	logger.Log(t, "Tags Retrieved: ", rg.Tags)
 	for _, tag := range mandatoryTags {
