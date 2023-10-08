@@ -49,6 +49,7 @@ func TestMandatoryTags(t *testing.T) {
 	terraform.InitAndApply(t, terraformOptions)
 
 	cred, err := azidentity.NewDefaultAzureCredential(nil)
+	logger.Log(t, "Testing Terratest Logger")
 	if err != nil {
 		logger.Log(t, "There was an error authenticating azure")
 		return
