@@ -56,6 +56,11 @@ func TestMandatoryTags(t *testing.T) {
 	}
 
 	rgClient, err := armresources.NewResourceGroupsClient("72a70c6f-90c3-4aca-a78d-6e538352c901", cred, nil)
+
+	if err != nil {
+		logger.Log(t, "There was an error retrieving RG client.")
+		return
+	}
 	rg, err := rgClient.Get(context.Background(), rgName, nil)
 
 	logger.Log(t, "Tags Retrieved: ", rg.Tags)
