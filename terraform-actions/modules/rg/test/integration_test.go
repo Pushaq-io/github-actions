@@ -58,6 +58,7 @@ func TestMandatoryTags(t *testing.T) {
 	rgClient, err := armresources.NewResourceGroupsClient("72a70c6f-90c3-4aca-a78d-6e538352c901", cred, nil)
 	rg, err := rgClient.Get(context.Background(), rgName, nil)
 
+	logger.Log(t, "Tags Retrieved: ", rg.Tags)
 	for _, tag := range mandatoryTags {
 		assert.Contains(t, rg.Tags, tag)
 	}
