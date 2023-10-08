@@ -32,6 +32,7 @@ jobs:
         download_external_modules: true
         
   test_module:
+    needs: check_module
     name: "Test Module"
     environment: dev
     runs-on: ubuntu-latest
